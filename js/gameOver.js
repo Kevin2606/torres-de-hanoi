@@ -39,18 +39,20 @@ export default class GameOver {
         <hr>
         <h3>${res[0].nickname}</h3>
         <br>
-        <h4>Tus estadisticas: </h4>
-        <table>
-            <thead>
-                <tr>
-                    <th>Cantidad de discos</th>
-                    <th>Tiempo</th> 
-                </tr>  
-            </thead>
-            <tbody>
-                ${str2}
-            </tbody>
-        </table>
+        <div class="tableEstadisticas">
+            <h4>Tus estadisticas: </h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Cantidad de discos</th>
+                        <th>Tiempo</th> 
+                    </tr>  
+                </thead>
+                <tbody>
+                    ${str2}
+                </tbody>
+            </table>
+        </div>
         <button class="btn btn-danger btn-lg" id="btnReiniciar">REINICIAR</button>
         `;
         ventanaGanador.insertAdjacentHTML('afterbegin', str);
