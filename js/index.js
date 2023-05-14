@@ -42,7 +42,7 @@ const nickname = document.getElementById('nickname');
 const cantidadDiscos = document.getElementById('cantidadDiscos');
 btnDiscosAcc.addEventListener('click', e => {
     e.preventDefault();
-    if (nickname.value == '') {
+    if (nickname.value.trim() == '') {
         alert('Debe ingresar un nickname');
         return;
     }
@@ -57,7 +57,7 @@ btnDiscosAcc.addEventListener('click', e => {
         let str = `<div class="disco" id="disco-${i}" draggable="false" style="width: ${ancho}px"></div>`
         document.getElementById('torre-1').insertAdjacentHTML('afterbegin', str);
     }
-    main(cantidad, nickname.value);
+    main(cantidad, nickname.value.trim());
 })
 
 const iniciarDiscoTorre = (cantidad, nickname) => {
