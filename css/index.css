@@ -1,4 +1,8 @@
-html{
+@font-face {
+    font-family: SuperMario;
+    src: url(../fuentes/SuperMario256.ttf);
+}
+html {
     font-size: 16px;
 }
 body {
@@ -8,16 +12,12 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-  }
-  @font-face {
-    font-family: SuperMario;
-    src: url(../fuentes/SuperMario256.ttf);
+    font-family: 'SuperMario', sans-serif;
 }
 .contenedor {
     padding: 1vw;
     width: 100%;
     height: 100%;
-    background-color: #ac8a4b;
     background-image: url(../img/fondo.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -34,8 +34,10 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+    font-size: .8rem;
 }
-.contenedorGanador{
+
+.contenedorGanador {
     padding: 1vw;
     width: 100%;
     height: 100%;
@@ -46,7 +48,7 @@ body {
     background-position: center;
     display: flex;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     align-content: center;
     flex-direction: column;
@@ -56,20 +58,24 @@ body {
     right: 0;
     bottom: 0;
 }
+
 .contenedor div {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .contenedor button {
     text-align: center;
     margin: 10px;
 }
+
 #ventanaGanador {
     color: black;
     font-size: 1.3rem;
     text-align: center;
 }
+
 #ventanaGanador img {
     width: 15rem;
     height: 15rem;
@@ -77,15 +83,20 @@ body {
     border: 5px solid white;
     margin: 2rem;
 }
-#gif-winner{
+
+#gif-winner {
     height: 18rem;
     background-size: cover;
 }
+
+
 .contenedor img:hover {
     transform: scale(1.1);
+    rotate: 360deg;
     transition: all 0.5s;
     cursor: pointer;
 }
+
 .tableEstadisticas {
     display: flex;
     flex-direction: column;
@@ -99,8 +110,9 @@ body {
     flex-direction: column;
     width: 100%;
     height: 100%;
-    
+
 }
+
 .containerTittle {
     display: flex;
     flex-direction: row;
@@ -130,7 +142,8 @@ body {
     margin-bottom: 3.5rem;
 
 }
-.containerTiempo p{
+
+.containerTiempo p {
     font-size: 2rem;
     padding: .5rem;
     background-color: rgba(255, 255, 255, 0.324);
@@ -140,12 +153,14 @@ body {
     border-style: solid;
     border-color: grey transparent;
 }
-.containerTorres{
+
+.containerTorres {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
 }
+
 .torre {
     width: 11rem;
     height: 300px;
@@ -159,11 +174,13 @@ body {
     border-radius: 20px;
 
 }
-.torre:hover{
+
+.torre:hover {
     background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5), 0 0 0 8px rgba(75, 75, 75, 0.1);
     transition: all 0.5s;
 }
+
 .disco {
     border: 2px solid black;
     height: 30px;
@@ -172,11 +189,16 @@ body {
     transition: all 0.5s;
 }
 
+.disco:hover {
+    cursor: pointer;
+}
+
 
 #btnRanking {
 
     height: 5rem;
 }
+
 /*MODAL*/
 .modal {
     display: none;
@@ -188,74 +210,87 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.4);
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
     background-color: #fefefe;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 90%;
-  }
-  
-  .close {
+}
+
+.close {
     color: #aaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
-  .modalHeader {
+}
+
+.modalHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  #containerSearchDiscos{
+}
+
+#containerSearchDiscos {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     font-size: 0.5rem;
-  }
-  #containerSearchDiscos select {
+}
+#tbodyRanking td{
+    color: rgb(56, 54, 46);
+    font-weight: lighter;
+}
+
+#containerSearchDiscos select {
     width: 6rem;
-  }
-  @media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 600px) {
     .contenedor {
-      flex-direction: column-reverse;
-    } 
+        flex-direction: column-reverse;
+    }
+
     .container {
         margin-top: 0;
     }
-    .containerTittle{
+
+    .containerTittle {
         flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-bottom: 1.5rem;
     }
-    .containerTittle h1{
+
+    .containerTittle h1 {
         font-size: 3rem;
         margin: .3rem;
         border: 0px solid transparent;
         border-bottom: 2px solid black;
     }
-    .torre{
+
+    .torre {
         width: 11rem;
         height: 40vh;
         margin: 0 5px;
     }
-    .torre:hover{
+
+    .torre:hover {
         pointer-events: none;
         background-color: rgba(255, 255, 255, 0.324);
         box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
         transition: none;
     }
-    
-  }
+
+}

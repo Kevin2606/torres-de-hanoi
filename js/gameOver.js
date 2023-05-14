@@ -1,5 +1,5 @@
 import urls from '../utils/response_winner.js';
-import { getFetch, postFetch, getFetchPersonal, getFetchDiscos, getRandomInt } from '../utils/utils.js'
+import { postFetch, getFetchPersonal, getFetchDiscos, getRandomInt } from '../utils/utils.js'
 
 
 export default class GameOver {
