@@ -43,7 +43,7 @@ const cantidadDiscos = document.getElementById('cantidadDiscos');
 btnDiscosAcc.addEventListener('click', e => {
     e.preventDefault();
     let cantidad = parseInt(cantidadDiscos.value);
-    if (!(cantidad>3 && cantidad<8)) {
+    if (!(cantidad>=3 && cantidad<=8)) {
         alert('La cantidad de discos debe ser entre 3 y 8');
         return;
     }
