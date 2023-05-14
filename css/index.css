@@ -2,12 +2,15 @@
     font-family: SuperMario;
     src: url(../fuentes/SuperMario256.ttf);
 }
+:root{
+    --urlFondo: url(../img/fondo.jpg);
+}
 html {
     font-size: 16px;
 }
 body {
     overscroll-behavior: contain;
-    background-image: url(../img/fondo.jpg);
+    background-image: var(--urlFondo);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -18,7 +21,8 @@ body {
     padding: 1vw;
     width: 100%;
     height: 100%;
-    background-image: url(../img/fondo.jpg);
+    background-color: #e5c68d;
+    background-image: var(--urlFondo);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -41,7 +45,7 @@ body {
     padding: 1vw;
     width: 100%;
     height: 100%;
-    background-image: url(../img/fondo.jpg);
+    background-image: var(--urlFondo);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -123,7 +127,6 @@ body {
 
 
 .containerTittle h1 {
-    font-family: SuperMario;
     letter-spacing: .2rem;
     font-size: 6rem;
     margin: 1rem;
