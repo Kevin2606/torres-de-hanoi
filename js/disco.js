@@ -24,7 +24,6 @@ export default class Disco {
         this.disco.addEventListener('touchmove', e => {
             e.preventDefault();
             const touch = e.touches[0];
-            console.log(touch)
             this.disco.style.position = 'absolute';
             this.disco.style.left = touch.clientX + 'px';
             this.disco.style.top = touch.clientY  + 'px';

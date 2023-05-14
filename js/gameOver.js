@@ -78,13 +78,14 @@ export default class GameOver {
         })
     }
     async getRankingGeneral(cantidadDiscos) {
-
         const res = await getFetchDiscos(cantidadDiscos);
         return res;
     }
     async getRankingPersonal(nickname) {
         const res = await getFetchPersonal(nickname);
-        return res;
+        //filtrar res para que coincida con el nickname
+        let resFiltrado = res.filter(element => element.nickname == nickname);
+        return resFiltrado;
     }
     async postStatistics(data) {
         const res = await postFetch(data)

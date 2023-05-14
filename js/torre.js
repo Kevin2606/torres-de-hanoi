@@ -73,7 +73,6 @@ export default class Torre {
         if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
            this.funtionDrop();
         }
-
     }
     finJuego() {
         //Si la torre tiene 3 discos, el juego termina y se gana
