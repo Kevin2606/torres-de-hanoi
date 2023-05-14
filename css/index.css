@@ -8,7 +8,24 @@ body {
     background-color: #514280;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.contenedorGanador{
+    padding: 1vw;
+    width: 100%;
+    height: 100%;
+    background-color: #514280;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
     align-items: center;
     align-content: center;
     flex-direction: column;
@@ -27,7 +44,19 @@ body {
     text-align: center;
     margin: 10px;
 }
-
+#ventanaGanador {
+    color: white;
+    text-align: center;
+}
+#gif-winner{
+    height: 18rem;
+    background-size: cover;
+}
+.contenedor img:hover {
+    transform: scale(1.1);
+    transition: all 0.5s;
+    cursor: pointer;
+}
 
 
 /*TORRES DE HANOI*/
@@ -57,4 +86,57 @@ body {
     transition: all 0.5s;
 }
 
+#btnRanking {
 
+    height: 5rem;
+}
+/*MODAL*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%;
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #containerSearchDiscos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.5rem;
+  }
+  #containerSearchDiscos select {
+    width: 6rem;
+  }

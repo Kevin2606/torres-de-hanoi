@@ -1,8 +1,10 @@
 //Clase torre para manejar las torres del juego de hanoi
 export default class Torre {
-    constructor(torre, cantidad) {
+    constructor(torre, cantidad, gameOver, nickname) {
         this.torre = torre;
         this.cantidad = cantidad;
+        this.gameOver = gameOver;
+        this.nickname = nickname;
         this.id = parseInt(torre.id.split('-')[1]);
         this.discos = [];
         this.torres = [];
@@ -16,7 +18,7 @@ export default class Torre {
         this.torre.addEventListener('drop', e => {
             if (!this.configDisco(e)) return; //Si se pudo agregar el disco a la torre - o no hacer nada
             this.agregarDiscoDOM(e);
-            this.gameOver();
+            this.finJuego();
         });
     }
     agregarDiscoDOM(e) {
@@ -54,22 +56,16 @@ export default class Torre {
         if (this.discos.length === 0) return;
         this.discos.forEach(disco => disco.removerEvento());
         this.getUltimoDisco().agregarEvento();
-/*         console.log(this.torre.id)
-        console.log(this.discos) */
-
     }
     getUltimoDisco() {
         //Devuelve el ultimo disco agregado a la torre
         return this.discos[ this.discos.length - 1];
     }
-    gameOver() {
+    finJuego() {
         //Si la torre tiene 3 discos, el juego termina y se gana
         //las torres que son posibles ganar son la 2 y la 3
         if (this.id === 1) return false;
         if (this.discos.length != this.cantidad) return;
-        this.guardarResultados();
-    }
-    guardarResultados(){
-        
+        this.gameOver.endGame(this.nickname, this.cantidad, '00:05:00');
     }
 }
