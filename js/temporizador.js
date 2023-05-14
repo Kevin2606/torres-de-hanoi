@@ -15,7 +15,6 @@ export default class Temporizador {
         return calcularTiempoTranscurridoFn(this.horaInicio, this.horaFin);
     }
     organizarPorTiempo(tiempos) {
-        console.log(tiempos)
         // 'hh:mm:ss' -> El formato es hora : minutos : segundos
         tiempos.sort((a, b) => {
             let tiempoA = a.tiempo.split(':');

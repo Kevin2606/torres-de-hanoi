@@ -111,7 +111,7 @@ body {
     border-radius: 20px;
 }
 
-.container h1 {
+.containerTittle h1 {
     font-family: LoudAndClear;
     color: grey;
     font-size: 8rem;
@@ -205,4 +205,28 @@ body {
   }
   #containerSearchDiscos select {
     width: 6rem;
+  }
+  @media screen and (max-width: 600px) {
+    .contenedor {
+      flex-direction: column-reverse;
+    } 
+    .container {
+        margin-top: 0;
+    }
+    .containerTittle{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+    .containerTittle img{
+        width: 5rem;
+        height: 5rem;
+        
+    }
+    .containerTittle h1{
+        font-size: 4rem;
+        margin: .3rem;
+
+    }
   }
