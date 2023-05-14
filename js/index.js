@@ -42,6 +42,10 @@ const nickname = document.getElementById('nickname');
 const cantidadDiscos = document.getElementById('cantidadDiscos');
 btnDiscosAcc.addEventListener('click', e => {
     e.preventDefault();
+    if (nickname.value == '') {
+        alert('Debe ingresar un nickname');
+        return;
+    }
     let cantidad = parseInt(cantidadDiscos.value);
     if (!(cantidad>=3 && cantidad<=8)) {
         alert('La cantidad de discos debe ser entre 3 y 8');
