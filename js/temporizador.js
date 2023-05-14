@@ -1,40 +1,28 @@
-
-import { obtenerFechaHoraActual, calcularTiempoTranscurridoFn } from "../utils/utils.js";
 export default class Temporizador {
     constructor() {
+        //Atributos
         this._tiempoTranscurrido = '00:00:00';
-        this.cronometroID;
+        this._cronometroID;
     }
-    pararCronometro() {
-        clearInterval(this.cronometroID);
-        return this._tiempoTranscurrido;
-    }
-    setTiempoTranscurrido(tiempoTranscurrido) {
+    //Metodos privados
+    _setTiempoTranscurrido(tiempoTranscurrido) {
+        //Setea el tiempo transcurrido y llama a _mostrarTiempoTranscurrido()
         this._tiempoTranscurrido = tiempoTranscurrido;
-        this.mostrarTiempoTranscurrido();
+        this._mostrarTiempoTranscurrido();
     }
-    getTiempoTranscurrido() {
-        return this._tiempoTranscurrido;
+    _mostrarTiempoTranscurrido() {
+        //Muestra el tiempo transcurrido en el elemento pTiempo del DOM
+        document.getElementById('pTiempo').innerHTML = this._tiempoTranscurrido;
     }
-    mostrarTiempoTranscurrido() {
-        let ptiempo = document.getElementById('pTiempo');
-        ptiempo.innerHTML = this._tiempoTranscurrido;
-    }
-/*     setHoraInicio() {
-        this.horaInicio = obtenerFechaHoraActual();
-        this.cronometro();
-    } */
-/*     setHoraFin() {
-        this.horaFin = obtenerFechaHoraActual();
-    }
-    calcularTiempoTranscurrido() {
-        return calcularTiempoTranscurridoFn(this.horaInicio, this.horaFin);
-    } */
-    cronometro() {
+    //Metodos publicos
+    iniciarCronometro() {
+        //Metodo para cronometrar el tiempo de juego y devolverlo en formato 'hh:mm:ss'
+        //'hh:mm:ss' -> El formato es hora : minutos : segundos
         let horas = 0;
         let minutos = 0;
         let segundos = 0;
-        this.cronometroID = setInterval( () => {
+        // guarda el ID del setInterval para poder parar el cronometro
+        this._cronometroID = setInterval( () => {
             segundos++;
             if (segundos >= 60) {
                 segundos = 0;
@@ -44,13 +32,20 @@ export default class Temporizador {
                     horas++;
                 }
             }
+            //padStart() -> Rellena con ceros a la izquierda hasta completar la cantidad de caracteres indicados (2 en este caso)
             const horasFormateadas = horas.toString().padStart(2, '0');
             const minutosFormateados = minutos.toString().padStart(2, '0');
             const segundosFormateados = segundos.toString().padStart(2, '0');
-            this.setTiempoTranscurrido(`${horasFormateadas}:${minutosFormateados}:${segundosFormateados}`);
+            this._setTiempoTranscurrido(`${horasFormateadas}:${minutosFormateados}:${segundosFormateados}`);
         }, 1000);
     }
+    pararCronometro() {
+        //Para el cronometro y devuelve el tiempo transcurrido
+        clearInterval(this._cronometroID);
+        return this._tiempoTranscurrido;
+    }
     organizarPorTiempo(tiempos) {
+        // Metodo para ordenar los tiempos de menor a mayor
         // 'hh:mm:ss' -> El formato es hora : minutos : segundos
         tiempos.sort((a, b) => {
             let tiempoA = a.tiempo.split(':');
