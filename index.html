@@ -38,50 +38,51 @@
                 <img id="btnRanking" data-bs-toggle="modal" data-bs-target="#exampleModal" src="img/trofeo.png" alt="">
             </div>
         </div>
-        <!----------------------------------------------------------------------------------->
+    </div>
+    <!----------------------------------------------------------------------------------->
 
 
-        <!-- Modal -->
-        <div id="modal" class="modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modalHeader">
-                        <h2>Ranking</h2>
-                        <span class="close">&times;</span>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modalHeader">
+                    <h2>Ranking</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <hr>
+                <div class="modalContent">
+                    <div id="containerSearchDiscos">
+                        <h4>Cantidad de discos:</h4>
+                        <select class="form-select" name="cantidadDiscos" id="cantidadDiscosSelect">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6" selected>6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
                     </div>
-                    <hr>
-                    <div class="modalContent">
-                        <div id="containerSearchDiscos">
-                            <h4>Cantidad de discos:</h4>
-                            <select class="form-select" name="cantidadDiscos" id="cantidadDiscosSelect">
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6" selected>6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                            </select>
-                        </div>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Nickname</th>
-                                    <th>Tiempo</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbodyRanking">
-                                <!--AQUI SUCEDERA MAGIA-->
-                            </tbody>
-                        </table>
-                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nickname</th>
+                                <th>Tiempo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyRanking">
+                            <!--AQUI SUCEDERA MAGIA-->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!----------------------------------------------------------------------------------->
-        <div class="contenedorGanador" id="ventanaGanador" style="visibility: hidden;">
-            <!--AQUI SUCEDERA MAGIA-->
-        </div>
+    <!----------------------------------------------------------------------------------->
+    <div class="contenedorGanador" id="ventanaGanador" style="visibility: hidden;">
+        <!--AQUI SUCEDERA MAGIA-->
+    </div>
 </body>
