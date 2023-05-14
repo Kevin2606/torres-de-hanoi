@@ -13,7 +13,7 @@ Dice la leyenda que, al crear el mundo, Dios situó sobre la Tierra tres varilla
 
 # Autor
 
-- Kevin Andres Gallardo Robles
+- Kevin Andres Gallardo Robles.
 
 # Imagenes
 
