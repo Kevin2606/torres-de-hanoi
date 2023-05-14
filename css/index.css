@@ -1,3 +1,6 @@
+html{
+    font-size: 16px;
+}
 body {
     overscroll-behavior: contain;
     background-image: url(../img/fondo.jpg);
@@ -7,8 +10,8 @@ body {
     background-position: center;
   }
   @font-face {
-    font-family: LoudAndClear;
-    src: url(../fuentes/LOUD\ AND\ CLEAR\ PERSONAL\ USE.ttf);
+    font-family: SuperMario;
+    src: url(../fuentes/SuperMario256.ttf);
 }
 .contenedor {
     padding: 1vw;
@@ -91,7 +94,7 @@ body {
 
 /*TORRES DE HANOI*/
 .container {
-    margin-top: 10rem;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -103,20 +106,39 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-}
-.containerTittle img{
-    width: 8rem;
-    height: 8rem;
-    background-color: rgba(255, 255, 255, 0.324);
-    border-radius: 20px;
+    margin-bottom: 3.5rem;
 }
 
+
 .containerTittle h1 {
-    font-family: LoudAndClear;
-    color: grey;
-    font-size: 8rem;
-    margin: 3rem;
+    font-family: SuperMario;
+    letter-spacing: .2rem;
+    font-size: 6rem;
+    margin: 1rem;
     text-align: center;
+    padding: .2rem;
+    border-width: 2px 0;
+    border-style: solid;
+    border-color: black transparent;
+}
+
+.containerTiempo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3.5rem;
+
+}
+.containerTiempo p{
+    font-size: 2rem;
+    padding: .5rem;
+    background-color: rgba(255, 255, 255, 0.324);
+    border-radius: 10px;
+    letter-spacing: .3rem;
+    border-width: 2px 0;
+    border-style: solid;
+    border-color: grey transparent;
 }
 .containerTorres{
     display: flex;
@@ -125,7 +147,7 @@ body {
     align-items: center;
 }
 .torre {
-    width: 200px;
+    width: 11rem;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -135,22 +157,21 @@ body {
     margin: 0 10px;
     background-color: rgba(255, 255, 255, 0.324);
     border-radius: 20px;
-    border: 2px solid grey;
-    background-image: url(../img/pergamino.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center bottom;
 
-
+}
+.torre:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5), 0 0 0 8px rgba(75, 75, 75, 0.1);
+    transition: all 0.5s;
 }
 .disco {
     border: 2px solid black;
-    width: 100px;
     height: 30px;
     background-color: #fff;
     border-radius: 10px;
     transition: all 0.5s;
 }
+
 
 #btnRanking {
 
@@ -219,14 +240,22 @@ body {
         align-items: center;
         margin-bottom: 1.5rem;
     }
-    .containerTittle img{
-        width: 5rem;
-        height: 5rem;
-        
-    }
     .containerTittle h1{
-        font-size: 4rem;
+        font-size: 3rem;
         margin: .3rem;
-
+        border: 0px solid transparent;
+        border-bottom: 2px solid black;
     }
+    .torre{
+        width: 11rem;
+        height: 40vh;
+        margin: 0 5px;
+    }
+    .torre:hover{
+        pointer-events: none;
+        background-color: rgba(255, 255, 255, 0.324);
+        box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+        transition: none;
+    }
+    
   }

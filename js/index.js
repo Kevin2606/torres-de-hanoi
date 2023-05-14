@@ -55,8 +55,8 @@ btnDiscosAcc.addEventListener('click', e => {
     }
     document.getElementById('ventanaInicio').style.visibility = 'hidden';
     for (let i = cantidad; i>=1; i--) {
-        let ancho = i*20;
-        let str = `<div class="disco" id="disco-${i}" draggable="false" style="width: ${ancho}px"></div>`
+        let ancho = ((10*i)/cantidad);
+        let str = `<div class="disco" id="disco-${i}" draggable="false" style="width:${ancho}rem"></div>`
         document.getElementById('torre-1').insertAdjacentHTML('afterbegin', str);
     }
     main(cantidad, nickname.value.trim());
@@ -76,7 +76,7 @@ const iniciarDiscoTorre = (cantidad, nickname) => {
     discos.forEach(disco => torres[0].aggDisco(disco));
     //Agregar torres a otras torres :'v aiuda
     torres.forEach(torre => torre.agregarTorres(torres));
-    temporizador.setHoraInicio();
+    temporizador.cronometro();
 }
 
 

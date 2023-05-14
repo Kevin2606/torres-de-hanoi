@@ -7,8 +7,7 @@ export default class GameOver {
         this.temporizador = temporizador;
     }
     async endGame(nickname, cantidadDiscos) {
-        this.temporizador.setHoraFin();
-        let tiempo = this.temporizador.calcularTiempoTranscurrido();
+        let tiempo = this.temporizador.pararCronometro();
         let data = { nickname, cantidadDiscos, tiempo }
         await this.postStatistics(data);
         let res = await this.getRankingPersonal(nickname);
