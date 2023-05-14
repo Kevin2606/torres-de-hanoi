@@ -8,6 +8,7 @@ let torres = [];
 let discos = [];
 let temporizador = new Temporizador();
 let gameOver = new GameOver(temporizador);
+localStorage.clear();
 //--------------------------------------------
 
 //ranking
@@ -30,6 +31,7 @@ function openModal() {
 // Función para cerrar el modal
 function closeModal() {
   modal.style.display = 'none';
+  cantidadDiscosSelect.value = 6;
 }
 
 // Eventos para abrir y cerrar el modal
