@@ -9,13 +9,17 @@
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css">
     <script src="js/index.js" type="module" defer></script>
+    <!--Añadimos el ico-->
+    <link rel="icon" type="image/ico" href="img/torredehanoiico.ico" />
     <title>Torres de Hanoi</title>
 </head>
 
 <body>
+    <!----------------------------------------------------------------------------------->
+    <!--JUEGO-->
     <div class="container">
         <div class="containerTittle">
-            <h1>Torres de Hanoi</h1>       
+            <h1>Torres de Hanoi</h1>
         </div>
         <div class="containerTiempo">
             <p id="pTiempo">00:00:00</p>
@@ -29,6 +33,7 @@
         </div>
     </div>
     <!----------------------------------------------------------------------------------->
+    <!--Inicio de config usuario-->
     <div class="contenedor" id="ventanaInicio">
         <div>
             <h1>
@@ -48,14 +53,12 @@
     </div>
 
     <!----------------------------------------------------------------------------------->
-
-
     <!-- Modal -->
     <div id="modal" class="modal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modalHeader">
-                    <h2>Ranking</h2>
+                    <h2>Ranking: Top 10</h2>
                     <span class="close">&times;</span>
                 </div>
                 <hr>
@@ -74,6 +77,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Nickname</th>
                                 <th>Tiempo</th>
                             </tr>
@@ -88,7 +92,29 @@
     </div>
 
     <!----------------------------------------------------------------------------------->
+    <!--MENSAJE GANADOR-->
     <div class="contenedorGanador" id="ventanaGanador" style="visibility: hidden;">
-        <!--AQUI SUCEDERA MAGIA-->
+        <h1 style="text-align: center;">¡GANASTE!</h1>
+        <hr>
+        <div>
+            <img id="gif-winner" src="" alt="">
+        </div>
+        <hr>
+        <h3 id="winnerNickname"></h3>
+        <br>
+        <div class="tableEstadisticas">
+            <h4>Tus estadisticas: </h4>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Cantidad de discos</th>
+                        <th>Tiempo</th>
+                    </tr>
+                </thead>
+                <tbody id="winnerTbody">
+                </tbody>
+            </table>
+        </div>
+        <button class="btn btn-danger btn-lg" id="btnReiniciar">REINICIAR</button>
     </div>
 </body>

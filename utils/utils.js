@@ -15,10 +15,16 @@ const getFetch = async () => {
     let res = await (await fetch(`${URLBD}/${RESOURCE}`, config)).json();
     return res;
 }
+const getFetchGif = async (url) => {
+    config.method = "GET";
+    config.body = JSON.stringify();
+    let res = await fetch(`${url}`, config);
+    return res;
+}
 const getFetchDiscos = async (cantidadDiscos) => {
     config.method = "GET";
     config.body = JSON.stringify();
-    let res = await (await fetch(`${URLBD}/${RESOURCE}?cantidadDiscos=${cantidadDiscos}`, config)).json();
+    let res = await (await fetch(`${URLBD}/${RESOURCE}?cantidadDiscos=${cantidadDiscos}&page=1&limit=10&sortBy=tiempo&order=asc`, config)).json();
     return res;
 }
 const getFetchPersonal = async (nickname) => {
@@ -60,4 +66,4 @@ function obtenerFechaHoraActual() {
     return cadenaISO8601;
 }
 
-export { getFetch, postFetch, getFetchPersonal, getFetchDiscos, getRandomInt, calcularTiempoTranscurridoFn, obtenerFechaHoraActual };
+export { getFetch, postFetch, getFetchPersonal, getFetchDiscos, getRandomInt, calcularTiempoTranscurridoFn, obtenerFechaHoraActual, getFetchGif };

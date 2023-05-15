@@ -19,7 +19,6 @@ export default class Disco {
         this.disco.addEventListener('dragstart', e => datos(e, this));
         this.disco.addEventListener('touchstart', e => {
             e.preventDefault();
-
             datos(e, this);
         });
         this.disco.addEventListener('touchmove', e => {
@@ -37,8 +36,8 @@ export default class Disco {
             this.disco.style.position = 'static';
             this.disco.style.left = null;
             this.disco.style.top = null;
-            this.torre.torres.forEach(torre => {
-                torre.calcularPosicionDisco(x, y);
+            this.torre.getTorresList().forEach(torre => {
+                torre.calcularPosicionTouch(x, y);
             });
         });
     }
@@ -61,5 +60,5 @@ export default class Disco {
 function datos(e, disco) {
     localStorage.setItem('disco', e.target.id);
     localStorage.setItem('discoID', disco.id);
-    localStorage.setItem('torreID', disco.torre.id);
+    localStorage.setItem('torreID', disco.torre.getTorreId());
 }

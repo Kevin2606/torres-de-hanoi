@@ -10,8 +10,9 @@ import Jugador from "./jugador.js";
 const torres = [];
 const discos = [];
 const temporizador = new Temporizador();
-const gameOver = new GameOver(temporizador);
 const jugador = new Jugador();
+const gameOver = new GameOver(temporizador, jugador);
+gameOver.preLoadGif();
 //Reset localStorage
 localStorage.clear();
 
@@ -35,6 +36,7 @@ function openModal() {
 function closeModal() {
     modal.style.display = 'none';
     cantidadDiscosSelect.value = 6;
+    document.getElementById('tbodyRanking').innerHTML = '';
 }
 // Eventos para abrir y cerrar el modal
 openModalBtn.addEventListener('click', openModal);
@@ -75,7 +77,7 @@ const main = (cantidad, nickname) => {
     jugador.nickname = nickname;
     jugador.cantidadDiscos = cantidad;
     //Inicializar torres
-    inicializarTorres(cantidad, nickname);
+    inicializarTorres();
     //Inicializar discos
     inicializarDiscos();
     //Logida de configuracion OOP de torres y discos
@@ -89,10 +91,10 @@ const main = (cantidad, nickname) => {
 //-----------------------------------------------------------------
 //Funciones auxiliares a main()
 
-const inicializarTorres = (cantidad, nickname) => {
+const inicializarTorres = () => {
     //Inicializar torres
     document.querySelectorAll('.torre').forEach(torre => {
-        torres.push(new Torre(torre, cantidad, gameOver, nickname));
+        torres.push(new Torre(torre, gameOver));
     })
 }
 const inicializarDiscos = () => {
@@ -107,5 +109,5 @@ const utilsTorres = () => {
     //Agregar discos a la torre 1
     discos.forEach(disco => torres[0].aggDisco(disco));
     //Agregar referencia de torres a otras torres para poder validar movimientos
-    torres.forEach(torre => torre.agregarTorres(torres));
+    torres.forEach(torre => torre.setTorresList(torres));
 }
