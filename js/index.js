@@ -60,12 +60,12 @@ btnIniciarJuego.addEventListener('click', e => {
     if (!(cantidad >= 3 && cantidad <= 8)) {
         alert('La cantidad de discos debe ser entre 3 y 8');
         return;
-    } 
+    }
     const anchoContenedor = document.getElementById('torre-1').clientWidth;
     //Crear y gregar discos a la torre 1 en el DOM
     for (let i = cantidad; i >= 1; i--) {
-        let ancho = (i*8/cantidad)*anchoContenedor/10;
-        let str = `<div class="disco" id="disco-${i}" draggable="false" style="width:${ancho}px"></div>`
+        let ancho = (i * 8 / cantidad) * anchoContenedor / 10;
+        let str = `<div class="disco" id="disco-${i}" draggable="false" style="width:${ancho}px; background-color:${generarColorAleatorio()}"></div>`
         document.getElementById('torre-1').insertAdjacentHTML('afterbegin', str);
     }
     //Funcion principal
@@ -111,4 +111,20 @@ const utilsTorres = () => {
     discos.forEach(disco => torres[0].aggDisco(disco));
     //Agregar referencia de torres a otras torres para poder validar movimientos
     torres.forEach(torre => torre.setTorresList(torres));
+}
+const generarColorAleatorio = () => {
+    // Generar tres componentes de color en el rango de 0 a 255
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+
+    // Convertir los componentes a su representación hexadecimal
+    let rHex = r.toString(16).padStart(2, '0');
+    let gHex = g.toString(16).padStart(2, '0');
+    let bHex = b.toString(16).padStart(2, '0');
+
+    // Combinar los componentes en un color hexadecimal
+    let colorHex = '#' + rHex + gHex + bHex;
+
+    return colorHex;
 }
