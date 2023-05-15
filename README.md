@@ -18,6 +18,6 @@ Dice la leyenda que, al crear el mundo, Dios situó sobre la Tierra tres varilla
 # Imagenes
 
 ![image](https://github.com/Kevin2606/torres-de-hanoi/assets/54305330/cf58a901-6cf3-4820-92b7-6ce83903545f)
-![image](https://github.com/Kevin2606/torres-de-hanoi/assets/54305330/628345de-d398-4ba6-9464-d190d98bddd2)
+
 
 
