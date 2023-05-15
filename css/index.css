@@ -51,7 +51,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -165,7 +165,7 @@ body {
 }
 
 .torre {
-    width: 11rem;
+    width: 12rem;
     height: 300px;
     display: flex;
     flex-direction: column;
@@ -282,9 +282,11 @@ body {
         border: 0px solid transparent;
         border-bottom: 2px solid black;
     }
-
+    .containerTorres{
+        font-size: 16px;
+    }
     .torre {
-        width: 11rem;
+        width: 12rem;
         height: 40vh;
         margin: 0 5px;
     }

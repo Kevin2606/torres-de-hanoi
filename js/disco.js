@@ -18,7 +18,6 @@ export default class Disco {
         this.disco.setAttribute('draggable', this._draggable);
         this.disco.addEventListener('dragstart', e => datos(e, this));
         this.disco.addEventListener('touchstart', e => {
-            e.preventDefault();
             datos(e, this);
         });
         this.disco.addEventListener('touchmove', e => {

@@ -60,11 +60,12 @@ btnIniciarJuego.addEventListener('click', e => {
     if (!(cantidad >= 3 && cantidad <= 8)) {
         alert('La cantidad de discos debe ser entre 3 y 8');
         return;
-    }
+    } 
+    const anchoContenedor = document.getElementById('torre-1').clientWidth;
     //Crear y gregar discos a la torre 1 en el DOM
     for (let i = cantidad; i >= 1; i--) {
-        let ancho = ((10 * i) / cantidad);
-        let str = `<div class="disco" id="disco-${i}" draggable="false" style="width:${ancho}rem"></div>`
+        let ancho = (i*8/cantidad)*anchoContenedor/10;
+        let str = `<div class="disco" id="disco-${i}" draggable="false" style="width:${ancho}px"></div>`
         document.getElementById('torre-1').insertAdjacentHTML('afterbegin', str);
     }
     //Funcion principal
