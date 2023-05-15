@@ -7,7 +7,7 @@ export default class GameOver {
         this.temporizador = temporizador;
         this.jugador = jugador;
         this.urlRandom = urls['urls'][getRandomInt(100)];
-        this.imgWinnerAlternative = '../img/imgwinner.png';
+        this.imgWinnerAlternative = 'https://res.cloudinary.com/dulupp7yk/image/upload/v1684114572/torresdehanoi/imgwinner_btbywx.png';
         this._gif = '';
     }
     //Metodos privados
@@ -98,10 +98,11 @@ export default class GameOver {
 
     async showRankingGeneral(cantidadDiscos) {
         const res = await this._getRankingGeneral(cantidadDiscos)
-        this.temporizador.organizarPorTiempo(res)
         let tbodyRanking = document.getElementById('tbodyRanking');
+        if (res.length == 0) return tbodyRanking.innerHTML = '<tr><td colspan="3"><center>Puedes ser el #1</center></td></tr>';
+        this.temporizador.organizarPorTiempo(res)
         tbodyRanking.innerHTML = '';
-        let contador = '<img src="../img/corona.png" alt="corona" width="20px" height="20px" style="margin-right: 5px;">';
+        let contador = '<img src="https://res.cloudinary.com/dulupp7yk/image/upload/v1684114572/torresdehanoi/king_vhmrza.png" alt="corona" width="20px" height="20px" style="margin-right: 5px;">';
         res.forEach(element => {
             let str = `
             <tr>

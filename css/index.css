@@ -3,7 +3,7 @@
     src: url(../fuentes/SuperMario256.ttf);
 }
 :root{
-    --urlFondo: url(../img/fondo.jpg);
+    --urlFondo: url(https://res.cloudinary.com/dulupp7yk/image/upload/v1684114573/torresdehanoi/fondo_pc3jeh.jpg);
 }
 html {
     font-size: 16px;
